@@ -6,6 +6,11 @@
     <title>Bootstrap demo</title>
     <link rel="stylesheet" href="lay.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    
+    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   </head>
   <body>
@@ -326,11 +331,58 @@
                     </div>
                 </div>
                
-
             </div> 
 
         </div>
     </section>
+ <!--contact & map-->
+
+    <section class="p-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md">
+                    <h2 class="text-center mb-4">Contact info</h2>
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item">
+                            <span class="fw-bold">Main location:</span>50 Main st Boston
+                        </li>
+                          <li class="list-group-item">
+                            <span class="fw-bold">Phone:</span>9999-55555
+                        </li>                       <li class="list-group-item">
+                            <span class="fw-bold">Email</span> example@email.com
+                        </li>                       <li class="list-group-item">
+                            <span class="fw-bold">Student email:</span>555 enroll@email.com
+                        </li>
+                    </ul>
+               </div>
+                <div class="col-md">
+                    <div id='map' style='width: 400px; height: 300px;'></div>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <p class="lead">Copyright &copy; 2021 Front</p>
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1"></i>
+            </a>
+        </div>
+    </footer>
+    <!--mapbox script-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+
+    <script>
+          mapboxgl.accessToken = 'pk.eyJ1Ijoia29iYWxkcyIsImEiOiJjbDdhbWp0eHUwb3kzM3FvNG5jM2x0bmdqIn0.417ODoEwvDp0Vap8bZ_rpQ';
+          var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-71.06298,42.35725],
+            zoom:18
+          });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
